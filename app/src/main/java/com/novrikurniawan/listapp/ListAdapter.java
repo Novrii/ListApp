@@ -21,13 +21,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     public class ListViewHolder extends RecyclerView.ViewHolder{
         public TextView nameText;
-//        public TextView countText;
 
         public ListViewHolder(View itemView) {
             super(itemView);
 
             nameText = itemView.findViewById(R.id.textview_name_item);
-//            countText = itemView.findViewById(R.id.textview_amount_item);
         }
     }
 
@@ -46,11 +44,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         }
 
         String name = mCursor.getString(mCursor.getColumnIndex(ListContract.ListEntry.COLUMN_NAME));
-//        int amount = mCursor.getInt(mCursor.getColumnIndex(ListContract.ListEntry.COLUMN_AMOUNT));
         long id = mCursor.getLong(mCursor.getColumnIndex(ListContract.ListEntry._ID));
 
         holder.nameText.setText(name);
-//        holder.countText.setText(String.valueOf(amount));
         holder.itemView.setTag(id);
     }
 

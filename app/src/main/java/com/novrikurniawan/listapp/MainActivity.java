@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase mDatabase;
     private ListAdapter mAdapter;
     private EditText mEditTextName;
-//    private TextView mTextViewAmount;
-//    private int mAmount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,25 +46,8 @@ public class MainActivity extends AppCompatActivity {
         }).attachToRecyclerView(recyclerView);
 
         mEditTextName = findViewById(R.id.edittext_name);
-//        mTextViewAmount = findViewById(R.id.textview_amount);
-
-//        Button buttonIncrease = findViewById(R.id.button_increase);
-//        Button buttonDecrease = findViewById(R.id.button_decrease);
         Button buttonAdd = findViewById(R.id.button_add);
 
-//        buttonIncrease.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                increase();
-//            }
-//        });
-//
-//        buttonDecrease.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                decrease();
-//            }
-//        });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,21 +57,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    private void increase() {
-//        mAmount++;
-//        mTextViewAmount.setText(String.valueOf(mAmount));
-//    }
-//
-//    private void decrease() {
-//        if (mAmount > 0) {
-//            mAmount--;
-//            mTextViewAmount.setText(String.valueOf(mAmount));
-//        }
-//    }
 
     private void addItem() {
 
-//        if (mEditTextName.getText().toString().trim().length() == 0 || mAmount == 0) {
         if (mEditTextName.getText().toString().trim().length() == 0 ) {
             return;
         }
@@ -98,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         String name = mEditTextName.getText().toString();
         ContentValues cv = new ContentValues();
         cv.put(ListContract.ListEntry.COLUMN_NAME, name);
-//        cv.put(ListContract.ListEntry.COLUMN_AMOUNT, mAmount);
 
         mDatabase.insert(ListContract.ListEntry.TABLE_NAME, null, cv);
         mAdapter.swapCursor(getAllItems());

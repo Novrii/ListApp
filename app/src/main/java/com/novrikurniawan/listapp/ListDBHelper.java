@@ -21,7 +21,6 @@ public class ListDBHelper extends SQLiteOpenHelper {
                 ListEntry.TABLE_NAME + " (" +
                 ListEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ListEntry.COLUMN_NAME + " TEXT NOT NULL, " +
-//                ListEntry.COLUMN_AMOUNT + " INTEGER NOT NULL, " +
                 ListEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
 
